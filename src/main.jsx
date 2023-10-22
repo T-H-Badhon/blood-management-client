@@ -14,22 +14,24 @@ import Profile from './Pages/Profile';
 import FindDonor from './Pages/FindDonor';
 import About from './Pages/About';
 import Services from './Pages/Services';
+import AuthProvider from './Provider/AuthProvider';
+import PrivateRoute from './Route/PrivateRoute';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout> ,
+    element: <MainLayout></MainLayout>,
     children: [
       {
-        path:'/',
-        element:<Home></Home>
+        path: '/',
+        element: <Home></Home>
       },
       {
         path: 'about',
         element: <About></About>
       },
       {
-        path:'login',
+        path: 'login',
         element: <Login></Login>
       },
       {
@@ -38,10 +40,10 @@ const router = createBrowserRouter([
       },
       {
         path: 'profile',
-        element: <Profile></Profile>
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       },
       {
-        path:'finddonor',
+        path: 'finddonor',
         element: <FindDonor></FindDonor>
       },
       {
@@ -54,6 +56,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

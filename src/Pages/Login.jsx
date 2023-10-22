@@ -1,15 +1,46 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Login = () => {
 
-    const handleSubmit=event=>{
+    const { logIn, googleLogIn, facebookLogIn } = useContext(AuthContext)
+    const google =()=>{
+        googleLogIn()
+        .then(result=>{
+            console.log(result)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
+
+    const facebook =()=>{
+        facebookLogIn()
+        .then(result=>{
+            console.log(result)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
+
+
+    const handleSubmit = event => {
         event.preventDefault()
-        const form=event.target 
-        const email=form.email.value 
-        const password=form.password.value
-        console.log(email,password)
+        const form = event.target
+        const email = form.email.value
+        const password = form.password.value
+        logIn(email,password)
+        .then(result=>{
+            console.log(result)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+
+        event.target.reset()
     }
     return (
         <div className=' pt-32 md:pt-40' >
@@ -55,6 +86,10 @@ const Login = () => {
                 </Button>
                 <h1>Create new account? <Link className='text-red-500' to='/registration'>Go To Registration</Link> </h1>
             </form>
+            <div className='md:flex justify-center items-center m-4'>
+                <Button onClick={google} className='bg-white m-2'><h1 className='text-red-500'>Sign In with Google</h1></Button>
+                <Button onClick={facebook} className='bg-white m-2'><h1 className='text-red-500'>Sign In with FaceBook</h1></Button>
+            </div>
         </div>
     );
 };
