@@ -1,18 +1,20 @@
 import React, { useContext } from 'react';
 import { Button, Checkbox, Label, TextInput } from 'flowbite-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Login = () => {
-
+    const navigate=useNavigate()
     const { logIn, googleLogIn, facebookLogIn } = useContext(AuthContext)
     const google =()=>{
         googleLogIn()
         .then(result=>{
             console.log(result)
+            navigate('/profile')
         })
         .catch(error=>{
             console.log(error)
+            
         })
     }
 
@@ -20,6 +22,7 @@ const Login = () => {
         facebookLogIn()
         .then(result=>{
             console.log(result)
+            navigate('/profile')
         })
         .catch(error=>{
             console.log(error)
@@ -35,12 +38,14 @@ const Login = () => {
         logIn(email,password)
         .then(result=>{
             console.log(result)
+            navigate('/')
         })
         .catch(error=>{
             console.log(error)
         })
 
         event.target.reset()
+        
     }
     return (
         <div className=' pt-32 md:pt-40' >
