@@ -13,6 +13,7 @@ import Registration from './Pages/Registration';
 import Profile from './Pages/Profile';
 import FindDonor from './Pages/FindDonor';
 import About from './Pages/About';
+import Services from './Pages/Services';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path:'finddonor',
         element: <FindDonor></FindDonor>
+      },
+      {
+        path: 'services',
+        element: <Services></Services>
       }
     ]
   },

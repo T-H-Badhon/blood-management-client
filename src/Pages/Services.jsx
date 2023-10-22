@@ -1,11 +1,11 @@
 import React from 'react';
 
-const FindDonor = () => {
+const Services = () => {
     return (
         <div>
-            find donor
+            services
         </div>
     );
 };
 
-export default FindDonor;
+export default Services;
