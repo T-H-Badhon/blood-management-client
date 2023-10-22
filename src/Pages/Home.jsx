@@ -10,7 +10,7 @@ const Home = () => {
                     <h1 className='text-3xl'>Resister as DONOR</h1>
                 </button>
             </Link>
-            <Link to="/findDonor">
+            <Link to="/finddonor">
                 <button className='flex justify-center bg-white border border-red-500 rounded-3xl text-red-500 items-center px-5 py-10 mb-10 md:mb-0'>
                     <h1 className='text-3xl'>Find DONOR</h1>
                 </button>
