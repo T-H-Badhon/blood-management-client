@@ -144,7 +144,7 @@ const Registration = () => {
                     <TextInput
                         color="failure"
                         id="email"
-                        placeholder="name@gmail.com"
+                        placeholder="new@email.com"
                         required
                         shadow
                         type="email"

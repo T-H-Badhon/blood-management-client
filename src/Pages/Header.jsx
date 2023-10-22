@@ -11,7 +11,7 @@ const Header = () => {
                     <h1 className="self-center whitespace-nowrap text-3xl font-semibold text-red-500 dark:text-white">Blood Bank- HNP</h1>
                 </Navbar.Brand>
                 <div className="flex md:order-2">
-                    <Button>Sign In</Button>
+                    <Link to='/login'><Button color="failure">Sign In</Button></Link>
                     <Navbar.Toggle />
                 </div>
                 <Navbar.Collapse>
