@@ -24,7 +24,7 @@ const UpdateProfile = () => {
             address
         }
 
-        fetch('http://localhost:5000/update', {
+        fetch('https://blood-management-server-py1oktes5-md-tanvir-hasans-projects.vercel.app/update', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

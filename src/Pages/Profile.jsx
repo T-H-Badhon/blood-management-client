@@ -15,7 +15,7 @@ const Profile = () => {
 
     const deleteAccount = () => {
         deleteProfile()
-        fetch(`http://localhost:5000/${user.email}`, {
+        fetch(`https://blood-management-server-py1oktes5-md-tanvir-hasans-projects.vercel.app/${user.email}`, {
             method: 'DELETE'
         })
         .then(res=>res.json())
@@ -27,7 +27,7 @@ const Profile = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/${user.email}`)
+        fetch(`https://blood-management-server-py1oktes5-md-tanvir-hasans-projects.vercel.app/${user.email}`)
             .then(res => res.json())
             .then(data => setProfile(data[0]))
     }, [])

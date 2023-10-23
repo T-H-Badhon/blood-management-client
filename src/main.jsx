@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       {
         path: 'donorList/:bG',
         element: <DonorList></DonorList>,
-        loader: ({params})=> fetch(`http://localhost:5000/donorlist/${params.bG}`)
+        loader: ({params})=> fetch(`https://blood-management-server-py1oktes5-md-tanvir-hasans-projects.vercel.app/${params.bG}`)
       }
     ]
   },

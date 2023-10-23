@@ -53,7 +53,7 @@ const Registration = () => {
         createUser(email, password1)
             .then(result => {
                 console.log(result)
-                fetch('http://localhost:5000/profile', {
+                fetch('https://blood-management-server-py1oktes5-md-tanvir-hasans-projects.vercel.app/profile', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
