@@ -25,7 +25,7 @@ const Header = () => {
                     </Link>
                     <Link className='text-red-500 text-xl p-2 rounded-lg hover:bg-red-500 hover:text-white' to='/about'>About</Link>
                     <Link className='text-red-500 text-xl p-2 rounded-lg hover:bg-red-500 hover:text-white' to='/services'>Services</Link>
-                    <Link className='text-red-500 text-xl p-2 rounded-lg hover:bg-red-500 hover:text-white' to='finddonor'>Find a DONOR</Link>
+                    <Link className='text-red-500 text-xl p-2 rounded-lg hover:bg-red-500 hover:text-white' to='/finddonor'>Find a DONOR</Link>
                 </Navbar.Collapse>
             </Navbar>
             <h1 className='text-red-500 text-2xl text-center'>Initially lunched . Under develop..</h1>

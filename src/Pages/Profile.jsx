@@ -7,19 +7,20 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Profile = () => {
     const navigate=useNavigate()
-    const { logOut, user } = useContext(AuthContext)
+    const { logOut, user, deleteProfile } = useContext(AuthContext)
     const [profile, setProfile] = useState({})
     const logOutB = () => {
         logOut();
     }
 
     const deleteAccount = () => {
+        deleteProfile()
         fetch(`http://localhost:5000/${user.email}`, {
             method: 'DELETE'
         })
         .then(res=>res.json())
         .then(data=>console.log(data))
-        logOut()
+        
         navigate('/')
     }
 

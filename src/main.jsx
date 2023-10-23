@@ -17,6 +17,7 @@ import Services from './Pages/Services';
 import AuthProvider from './Provider/AuthProvider';
 import PrivateRoute from './Route/PrivateRoute';
 import UpdateProfile from './Pages/UpdateProfile';
+import DonorList from './Pages/DonorList';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
       {
         path: 'services',
         element: <Services></Services>
+      },
+      {
+        path: 'donorList/:bG',
+        element: <DonorList></DonorList>,
+        loader: ({params})=> fetch(`http://localhost:5000/donorlist/${params.bG}`)
       }
     ]
   },
